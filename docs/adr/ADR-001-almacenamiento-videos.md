@@ -4,6 +4,7 @@ Aceptado
 📅 Fecha
 2026-03-17
 
+
 Contexto :
 
 La plataforma EducaMás necesita definir una estrategia para almacenar y distribuir videos educativos.
@@ -35,6 +36,8 @@ Dependencia del proveedor
 Costos variables
 
 
+
+
 Opción B: Servidores propios
 
 Pros:
@@ -46,6 +49,9 @@ Baja escalabilidad
 Alto costo inicial
 Riesgo de fallas
 Mantenimiento constante
+
+
+
 
 
 Decisión:
