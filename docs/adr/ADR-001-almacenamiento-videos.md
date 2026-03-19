@@ -1,5 +1,4 @@
 ADR-001: Estrategia de almacenamiento de videos
-📌 Estado
 
 Aceptado
 
@@ -7,7 +6,7 @@ Aceptado
 
 2026-03-17
 
-🧩 Contexto
+Contexto
 
 La plataforma EducaMás necesita definir una estrategia para almacenar y distribuir videos educativos.
 
