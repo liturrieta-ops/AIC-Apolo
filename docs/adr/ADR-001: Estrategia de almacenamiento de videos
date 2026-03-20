@@ -1,0 +1,114 @@
+# ADR-001: Estrategia de almacenamiento de videos
+
+## Estado
+Aceptado
+
+## Fecha
+2026-03-17
+
+---
+
+## Contexto
+
+La plataforma de cursos online **EducaMás** requiere definir una estrategia eficiente para almacenar y distribuir contenido multimedia (videos educativos), considerando crecimiento, rendimiento y costos.
+
+### Requerimientos clave
+
+- Volumen estimado: 500 horas de video el primer año
+- Tráfico esperado: 10.000 usuarios concurrentes en horas peak
+- Presupuesto: Limitado (startup en crecimiento)
+- Rendimiento: Baja latencia y reproducción fluida
+- Seguridad: Protección contra descargas no autorizadas
+- Equipo técnico: Experiencia en servidores tradicionales, poca en CDN
+
+---
+
+## Alternativas evaluadas
+
+### Opción A: Nube + CDN (AWS S3 + CDN)
+
+**Ventajas:**
+- Alta escalabilidad automática
+- Baja latencia global
+- Alta disponibilidad
+- Seguridad integrada
+- Sin gestión de infraestructura
+
+**Desventajas:**
+- Dependencia del proveedor cloud
+- Curva de aprendizaje inicial
+- Costos variables
+
+---
+
+### Opción B: Servidores propios
+
+**Ventajas:**
+- Control total de la infraestructura
+- Costos predecibles (CAPEX)
+- Aprovechamiento del conocimiento del equipo
+
+**Desventajas:**
+- Baja escalabilidad
+- Alto costo inicial
+- Mayor riesgo de caídas
+- Mantenimiento constante
+- Difícil manejo de alta concurrencia
+
+---
+
+## Decisión
+
+Se adopta la **Opción A: almacenamiento en la nube con CDN**, utilizando:
+
+- Amazon S3
+- Amazon CloudFront
+
+---
+
+## Justificación
+
+Esta opción permite cumplir con los requerimientos críticos de:
+
+- Escalabilidad
+- Rendimiento
+- Disponibilidad
+- Seguridad
+
+Además, se alinea con una arquitectura **cloud-native moderna**, ideal para startups digitales.
+
+---
+
+## Consecuencias
+
+### Impacto en el desarrollo
+- Integración con APIs de AWS
+- Uso de streaming adaptativo
+- Arquitectura basada en microservicios
+
+### Impacto en el mantenimiento
+- Infraestructura gestionada por AWS
+- Menor carga operativa
+- Enfoque en desarrollo de negocio
+
+### Impacto en costos
+- Modelo OPEX (pago por uso)
+- Eliminación de inversión inicial
+- Costos variables según consumo
+
+---
+
+## Riesgos
+
+- Dependencia del proveedor (vendor lock-in)
+- Incremento de costos a gran escala
+- Necesidad de monitoreo y optimización continua
+
+---
+
+## Resultado esperado
+
+- Plataforma altamente escalable
+- Streaming de video fluido
+- Mejor experiencia de usuario
+- Base tecnológica preparada para crecimiento
